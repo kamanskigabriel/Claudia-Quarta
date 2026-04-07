@@ -1,0 +1,180 @@
+algoritmo "maiores_de_idade"
+var
+   idade, i, contador: inteiro
+inicio
+   contador <- 0
+
+   para i de 1 ate 10 faca
+      escreva("Digite a idade da pessoa ", i, ": ")
+      leia(idade)
+
+      se idade >= 18 entao
+         contador <- contador + 1
+      fimse
+   fimpara
+
+   escreval("Quantidade de maiores de idade: ", contador)
+fimalgoritmo
+
+algoritmo "faixa_etaria"
+var
+   idade, i: inteiro
+   f1, f2, f3, f4, f5: inteiro
+inicio
+   f1 <- 0
+   f2 <- 0
+   f3 <- 0
+   f4 <- 0
+   f5 <- 0
+
+   para i de 1 ate 15 faca
+      escreva("Digite a idade da pessoa ", i, ": ")
+      leia(idade)
+
+      se idade >= 1 e idade <= 15 entao
+         f1 <- f1 + 1
+      senao se idade <= 30 entao
+         f2 <- f2 + 1
+      senao se idade <= 45 entao
+         f3 <- f3 + 1
+      senao se idade <= 60 entao
+         f4 <- f4 + 1
+      senao
+         f5 <- f5 + 1
+      fimse
+   fimpara
+
+   escreval("1 a 15 anos: ", f1)
+   escreval("16 a 30 anos: ", f2)
+   escreval("31 a 45 anos: ", f3)
+   escreval("46 a 60 anos: ", f4)
+   escreval("61 anos ou mais: ", f5)
+fimalgoritmo
+
+algoritmo "Primeiro Programa"
+
+var
+  nome: caractere
+
+inicio
+
+  escreval("Digite seu nome: ")
+  leia(nome)
+  escreva("Olá, ", nome, "!")
+
+fimalgoritmo
+
+algoritmo "altura_sexo"
+var
+   i, homens, contMulher: inteiro
+   altura, maior, menor, somaMulher, media: real
+   sexo: caractere
+inicio
+   homens <- 0
+   contMulher <- 0
+   somaMulher <- 0
+
+   para i de 1 ate 15 faca
+      escreva("Digite o sexo (M/F): ")
+      leia(sexo)
+      escreva("Digite a altura: ")
+      leia(altura)
+
+      // definir maior e menor
+      se i = 1 entao
+         maior <- altura
+         menor <- altura
+      senao
+         se altura > maior entao
+            maior <- altura
+         fimse
+         se altura < menor entao
+            menor <- altura
+         fimse
+      fimse
+
+      // contar homens e calcular mulheres
+      se sexo = "M" entao
+         homens <- homens + 1
+      senao
+         somaMulher <- somaMulher + altura
+         contMulher <- contMulher + 1
+      fimse
+   fimpara
+
+   // média das mulheres
+   se contMulher > 0 entao
+      media <- somaMulher / contMulher
+   senao
+      media <- 0
+   fimse
+
+   escreval("Número de homens: ", homens)
+   escreval("Maior altura: ", maior)
+   escreval("Menor altura: ", menor)
+   escreval("Média das alturas das mulheres: ", media)
+fimalgoritmo
+
+algoritmo "Conversor_Fahrenheit_Celsius"
+var
+   f: inteiro
+   c: real
+inicio
+   escreval(" Fahrenheit |  Centígrados")
+   escreval("---------------------------")
+
+   para f de 50 ate 65 faca
+      c <- 5/9 * (f - 32)
+      escreval("    ", f, "     |  ", c:5:2)
+   fimpara
+fimalgoritmo
+
+algoritmo "Sequencia_A"
+var
+   i: inteiro
+inicio
+   escreva("Sequência A: ")
+   para i de 1 ate 10 faca
+      se i < 10 entao
+         escreva(i, "/", i*i, " + ")
+      senao
+         escreva(i, "/", i*i)
+      fimse
+   fimpara
+fimalgoritmo
+algoritmo "Sequencia_B"
+var
+   num, den: inteiro
+inicio
+   escreva("Sequência B: ")
+   num <- 1
+   para den de 1 ate 50 faca
+      se den < 50 entao
+         escreva(num, "/", den, " + ")
+      senao
+         escreva(num, "/", den)
+      fimse
+      num <- num + 2
+   fimpara
+fimalgoritmo
+
+algoritmo "Fibonacci_11_Termos"
+var
+   cont, t1, t2, t3: inteiro
+inicio
+   // Inicializa os dois primeiros termos
+   t1 <- 0
+   t2 <- 1
+   
+   escreva(t1, "-", t2) // Imprime os dois primeiros: 0-1
+
+   // Laço para calcular os próximos 9 termos (totalizando 11)
+   para cont de 3 ate 11 faca
+      t3 <- t1 + t2
+      escreva("-", t3)
+      
+      // Desloca os valores para a próxima soma
+      t1 <- t2
+      t2 <- t3
+   fimpara
+fimalgoritmo
